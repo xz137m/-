@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي التخمين</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="welcome" class="screen">
+            <h1>تحدي التخمين</h1>
+            <button id="createRoom">إنشاء غرفة جديدة</button>
+            <div class="join-section">
+                <input type="text" id="roomCode" placeholder="رمز الغرفة" maxlength="6">
+                <button id="joinRoom">انضمام للغرفة</button>
+            </div>
+        </div>
+
+        <div id="gameRoom" class="screen hidden">
+            <div class="room-info">
+                <h2>رمز الغرفة: <span id="roomCodeDisplay"></span></h2>
+                <button id="copyLink">نسخ رابط الغرفة</button>
+            </div>
+
+            <div class="teams-section">
+                <div class="team-container">
+                    <h3>الفريق الأول</h3>
+                    <div id="team1Players" class="team-players"></div>
+                    <button class="join-team" data-team="team1">انضمام للفريق الأول</button>
+                </div>
+                <div class="team-container">
+                    <h3>الفريق الثاني</h3>
+                    <div id="team2Players" class="team-players"></div>
+                    <button class="join-team" data-team="team2">انضمام للفريق الثاني</button>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <div id="categorySelection">
+                    <h3>اختر التصنيف:</h3>
+                    <select id="category">
+                        <option value="">اختر تصنيف...</option>
+                        <option value="أفلام">أفلام</option>
+                        <option value="حيوانات">حيوانات</option>
+                        <option value="مشاهير">مشاهير</option>
+                        <option value="أماكن">أماكن</option>
+                        <option value="مأكولات">مأكولات</option>
+                    </select>
+                </div>
+                <button id="startGame" class="hidden">بدء اللعبة</button>
+            </div>
+
+            <div id="gameArea" class="hidden">
+                <div id="wordDisplay" class="hidden">
+                    <h3>الكلمة السرية:</h3>
+                    <p id="secretWord"></p>
+                </div>
+
+                <div class="chat-area">
+                    <div id="messages"></div>
+                    <div class="input-area">
+                        <input type="text" id="questionInput" placeholder="اكتب سؤالك هنا...">
+                        <button id="sendQuestion">إرسال</button>
+                        <div class="quick-answers">
+                            <button class="answer-btn" data-answer="نعم">نعم</button>
+                            <button class="answer-btn" data-answer="لا">لا</button>
+                            <button class="answer-btn" data-answer="ربما">ربما</button>
+                            <button class="answer-btn" data-answer="فهمت">فهمت</button>
+                            <button class="answer-btn" data-answer="صح">صح</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
