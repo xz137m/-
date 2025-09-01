@@ -7,4 +7,4 @@ services:
     plan: free                  # الخطة، ممكن تختار free أو paid
     buildCommand: "npm install" # أمر البناء قبل التشغيل
     startCommand: "node server.js" # أمر تشغيل السيرفر
->>>>>>> cdaee52be78e7493df617658d0faa303892ccd24
+
