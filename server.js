@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -151,14 +152,13 @@ io.on('connection', (socket) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
     console.log('Access the game at:');
     console.log(`- Local: http://localhost:${PORT}`);
     console.log(`- Network: http://${getLocalIP()}:${PORT}`);
 });
-
 
 function getLocalIP() {
     const { networkInterfaces } = require('os');
@@ -172,3 +172,4 @@ function getLocalIP() {
     }
     return 'localhost';
 }
+>>>>>>> cdaee52be78e7493df617658d0faa303892ccd24
