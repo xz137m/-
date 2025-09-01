@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: my-game-server        # اسم السيرفر عندك في Render
+    env: node                   # البيئة Node.js
+    branch: main                # الفرع اللي فيه المشروع
+    plan: free                  # الخطة، ممكن تختار free أو paid
+    buildCommand: "npm install" # أمر البناء قبل التشغيل
+    startCommand: "node server.js" # أمر تشغيل السيرفر
